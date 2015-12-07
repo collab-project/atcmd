@@ -1,0 +1,12 @@
+include README.rst requirements-dev.txt LICENSE .coveragerc
+recursive-include atcmd *.py
+
+recursive-include doc *
+prune doc/_build
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *~
+recursive-exclude * .coverage
+recursive-exclude * .tox
+recursive-exclude * .DS_Store
