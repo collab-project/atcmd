@@ -3,3 +3,6 @@ omit =
     setup.py
     doc/*
     atcmd/tests/*
+    .tox/*
+source =
+    atcmd
