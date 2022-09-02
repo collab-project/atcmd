@@ -128,7 +128,8 @@ class ATParser(object):
         logging.debug('Cleaning data: {}'.format(data))
 
         out = []
-        for i in range(len(data)):
+        i = 0
+        while i < len(data):
             c = data[i]
             if c == '"':
                 j = data.find('"', i + 1)  # search for closing "
@@ -141,6 +142,7 @@ class ATParser(object):
                 i = j
             elif c != ' ':
                 out.append(c.capitalize())
+            i += 1
 
         return "".join(out)
 
@@ -169,7 +171,8 @@ class ATParser(object):
         :param fromIndex:
         :type fromIndex: int
         """
-        for i in range(fromIndex, len(data)):
+        i = fromIndex
+        while i < len(data):
             c = data[i]
             if c == '"':
                 i = data.find('"', i + 1)
@@ -178,6 +181,7 @@ class ATParser(object):
 
             elif c == ch:
                 return i
+            i += 1
 
         return len(data)
 
